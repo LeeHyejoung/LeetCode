@@ -1,0 +1,23 @@
+bool isPalindrome(int x){
+    int i, length;
+    char a[31];
+
+    if (x < 0) {
+        return false;
+    }
+
+    i = 0;
+    while (x > 0) {
+        a[i++] = x % 10;
+        x /= 10;
+    }
+
+    length = i;
+
+    for (i = 0; i < length / 2; i++) {
+        if (a[i] != a[length - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
